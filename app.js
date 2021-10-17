@@ -22,6 +22,8 @@ app.use('/', index_1.default);
 app.use(function (req, res, next) {
     next((0, http_errors_1.default)(404));
 });
+
+//error handing 
 app.use(function (err, req, res, next) {
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
